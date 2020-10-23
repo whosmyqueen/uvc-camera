@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.uvc_camera_sdk">
+
+    <application />
+</manifest>

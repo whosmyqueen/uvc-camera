@@ -20,6 +20,7 @@
  *  Files in the libjpeg-turbo, libusb, libuvc, rapidjson folder
  *  may have a different license, see the respective files.
  */
+include ':uvc-camera-sdk'
 
 include ':libuvccamera'
 include ':usbCameraCommon'
