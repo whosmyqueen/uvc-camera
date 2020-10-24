@@ -9,8 +9,8 @@ if (file.exists()) {
     properties.load(file.newDataInputStream())
 }
 
-def gitUrl = 'https://gitee.com/KillKing/uvc-camera.git'   // Git仓库的url
-def siteUrl = 'https://gitee.com/KillKing/uvc-camera'   // 项目的主页
+def gitUrl = 'https://github.com/whosmyqueen/uvc-camera.git'   // Git仓库的url
+def siteUrl = 'https://github.com/whosmyqueen/uvc-camera'   // 项目的主页
 
 version = "1.0.0"
 group = "com.whosmyqueen.hardware"
@@ -31,7 +31,7 @@ bintray {
 
         version {
             name = version
-            desc = '养殖SDK'
+            desc = 'uvc-camera-sdk'
             released = new Date()
             vcsTag = 'v' + version
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
@@ -50,9 +50,8 @@ install {
                 // Add your description here
                 name aarId
                 artifactId aarId
-                description '养殖SDK'
+                description 'uvc-camera-sdk'
                 url siteUrl
-//                authentication(userName: "whosmyqueen", password: "zheng520")
                 // Set your license
                 licenses {
                     license {
