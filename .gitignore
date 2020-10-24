@@ -45,6 +45,7 @@ proguard/
 .gradle
 build/
 build
+.cxx/
 
 # gedit
 *~
