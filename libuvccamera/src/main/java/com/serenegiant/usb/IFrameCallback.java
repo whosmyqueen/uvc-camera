@@ -24,6 +24,7 @@
 package com.serenegiant.usb;
 
 import java.nio.ByteBuffer;
+
 /**
  * Callback interface for UVCCamera class
  * If you need frame data as ByteBuffer, you can use this callback interface with UVCCamera#setFrameCallback

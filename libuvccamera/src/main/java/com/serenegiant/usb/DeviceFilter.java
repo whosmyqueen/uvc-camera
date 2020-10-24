@@ -23,20 +23,20 @@
 
 package com.serenegiant.usb;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
 import android.content.Context;
 import android.content.res.Resources.NotFoundException;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbInterface;
 import android.text.TextUtils;
 import android.util.Log;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public final class DeviceFilter {
 
@@ -62,12 +62,12 @@ public final class DeviceFilter {
 	public final boolean isExclude;
 
 	public DeviceFilter(final int vid, final int pid, final int clasz, final int subclass,
-			final int protocol, final String manufacturer, final String product, final String serialNum) {
+                        final int protocol, final String manufacturer, final String product, final String serialNum) {
 		this(vid, pid, clasz, subclass, protocol, manufacturer, product, serialNum, false);
 	}
 
 	public DeviceFilter(final int vid, final int pid, final int clasz, final int subclass,
-			final int protocol, final String manufacturer, final String product, final String serialNum, final boolean isExclude) {
+                        final int protocol, final String manufacturer, final String product, final String serialNum, final boolean isExclude) {
 		mVendorId = vid;
 		mProductId = pid;
 		mClass = clasz;
@@ -112,7 +112,7 @@ public final class DeviceFilter {
 			int eventType = parser.getEventType();
 			while (eventType != XmlPullParser.END_DOCUMENT) {
 	            if (eventType == XmlPullParser.START_TAG) {
-					final DeviceFilter deviceFilter = readEntryOne(context, parser);
+					final com.serenegiant.usb.DeviceFilter deviceFilter = readEntryOne(context, parser);
 					if (deviceFilter != null) {
 						deviceFilters.add(deviceFilter);
 					}
@@ -244,7 +244,7 @@ public final class DeviceFilter {
 		return result;
 	}
 
-	public static DeviceFilter readEntryOne(final Context context, final XmlPullParser parser)
+	public static com.serenegiant.usb.DeviceFilter readEntryOne(final Context context, final XmlPullParser parser)
 			throws XmlPullParserException, IOException {
 		int vendorId = -1;
 		int productId = -1;
@@ -288,7 +288,7 @@ public final class DeviceFilter {
 					exclude = getAttributeBoolean(context, parser, null, "exclude", false);
         		} else if (eventType == XmlPullParser.END_TAG) {
         			if (hasValue) {
-	        			return new DeviceFilter(vendorId, productId, deviceClass,
+	        			return new com.serenegiant.usb.DeviceFilter(vendorId, productId, deviceClass,
 	        					deviceSubclass, deviceProtocol, manufacturerName, productName,
 	        					serialNumber, exclude);
         			}
@@ -404,7 +404,7 @@ public final class DeviceFilter {
 	 * @param f
 	 * @return
 	 */
-	public boolean matches(final DeviceFilter f) {
+	public boolean matches(final com.serenegiant.usb.DeviceFilter f) {
 		if (isExclude != f.isExclude) {
 			return false;
 		}
@@ -447,8 +447,8 @@ public final class DeviceFilter {
 				|| mSubclass == -1 || mProtocol == -1) {
 			return false;
 		}
-		if (obj instanceof DeviceFilter) {
-			final DeviceFilter filter = (DeviceFilter) obj;
+		if (obj instanceof com.serenegiant.usb.DeviceFilter) {
+			final com.serenegiant.usb.DeviceFilter filter = (com.serenegiant.usb.DeviceFilter) obj;
 
 			if (filter.mVendorId != mVendorId
 					|| filter.mProductId != mProductId

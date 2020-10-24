@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UVCCamera.iml" filepath="$PROJECT_DIR$/UVCCamera.iml" />
       <module fileurl="file://$PROJECT_DIR$/libuvccamera/libuvccamera.iml" filepath="$PROJECT_DIR$/libuvccamera/libuvccamera.iml" />
       <module fileurl="file://$PROJECT_DIR$/usbCameraCommon/usbCameraCommon.iml" filepath="$PROJECT_DIR$/usbCameraCommon/usbCameraCommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/usbCameraTest/usbCameraTest.iml" filepath="$PROJECT_DIR$/usbCameraTest/usbCameraTest.iml" />
@@ -14,6 +13,18 @@
       <module fileurl="file://$PROJECT_DIR$/usbCameraTest6/usbCameraTest6.iml" filepath="$PROJECT_DIR$/usbCameraTest6/usbCameraTest6.iml" />
       <module fileurl="file://$PROJECT_DIR$/usbCameraTest7/usbCameraTest7.iml" filepath="$PROJECT_DIR$/usbCameraTest7/usbCameraTest7.iml" />
       <module fileurl="file://$PROJECT_DIR$/usbCameraTest8/usbCameraTest8.iml" filepath="$PROJECT_DIR$/usbCameraTest8/usbCameraTest8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uvc-camera.iml" filepath="$PROJECT_DIR$/.idea/modules/uvc-camera.iml" group="uvc-camera" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libuvccamera/uvc-camera-libuvccamera.iml" filepath="$PROJECT_DIR$/.idea/modules/libuvccamera/uvc-camera-libuvccamera.iml" group="uvc-camera/libuvccamera" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraCommon/uvc-camera-usbCameraCommon.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraCommon/uvc-camera-usbCameraCommon.iml" group="uvc-camera/usbCameraCommon" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest/uvc-camera-usbCameraTest.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest/uvc-camera-usbCameraTest.iml" group="uvc-camera/usbCameraTest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest0/uvc-camera-usbCameraTest0.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest0/uvc-camera-usbCameraTest0.iml" group="uvc-camera/usbCameraTest0" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest2/uvc-camera-usbCameraTest2.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest2/uvc-camera-usbCameraTest2.iml" group="uvc-camera/usbCameraTest2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest3/uvc-camera-usbCameraTest3.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest3/uvc-camera-usbCameraTest3.iml" group="uvc-camera/usbCameraTest3" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest4/uvc-camera-usbCameraTest4.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest4/uvc-camera-usbCameraTest4.iml" group="uvc-camera/usbCameraTest4" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest5/uvc-camera-usbCameraTest5.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest5/uvc-camera-usbCameraTest5.iml" group="uvc-camera/usbCameraTest5" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest6/uvc-camera-usbCameraTest6.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest6/uvc-camera-usbCameraTest6.iml" group="uvc-camera/usbCameraTest6" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest7/uvc-camera-usbCameraTest7.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest7/uvc-camera-usbCameraTest7.iml" group="uvc-camera/usbCameraTest7" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraTest8/uvc-camera-usbCameraTest8.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraTest8/uvc-camera-usbCameraTest8.iml" group="uvc-camera/usbCameraTest8" />
     </modules>
   </component>
 </project>
