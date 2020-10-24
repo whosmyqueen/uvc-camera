@@ -36,6 +36,8 @@ android {
     defaultConfig {
         minSdkVersion 14
 		targetSdkVersion versionTarget
+		versionCode 8
+		versionName "3.00"
     }
 
     buildTypes {
@@ -93,3 +95,4 @@ dependencies {
 		exclude module: 'support-v4'
 	}
 }
+apply from: '../bintray.gradle'

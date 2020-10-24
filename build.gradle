@@ -4,22 +4,34 @@ buildscript {
 		kotlin_version = '1.4.10'
 	}
 	repositories {
-//		google()
-		maven { url 'https://maven.google.com' }
-		maven { url 'https://maven.aliyun.com/repository/public' }
+		maven { url 'https://maven.aliyun.com/repository/public/' }
+
+		maven { url 'https://maven.aliyun.com/repository/google/' }
+
+		maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+
+		maven { url 'https://maven.aliyun.com/repository/central/' }
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.2'
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+		//Gradle Android Maven plugin
+		classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+		//Gradle Bintray Plugin
+		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
 	}
 }
 
 allprojects {
     repositories {
-//    	google()
-		maven { url 'https://maven.google.com' }
-		maven { url 'https://maven.aliyun.com/repository/public' }
+		maven { url 'https://maven.aliyun.com/repository/public/' }
+
+		maven { url 'https://maven.aliyun.com/repository/google/' }
+
+		maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+
+		maven { url 'https://maven.aliyun.com/repository/central/' }
 		jcenter()
 		maven { url 'http://raw.github.com/saki4510t/libcommon/master/repository/' }
     }

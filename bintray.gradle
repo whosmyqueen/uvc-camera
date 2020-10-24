@@ -1,0 +1,106 @@
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+Properties properties = new Properties()
+boolean isHasFile = false
+File file = new File(rootDir.getAbsolutePath() + "/local.properties")
+if (file.exists()) {
+    isHasFile = true
+    properties.load(file.newDataInputStream())
+}
+
+def gitUrl = 'https://gitee.com/KillKing/uvc-camera.git'   // Git仓库的url
+def siteUrl = 'https://gitee.com/KillKing/uvc-camera'   // 项目的主页
+
+version = "1.0.0"
+group = "com.whosmyqueen.hardware"
+def aarId = "uvc-camera-sdk"
+
+
+bintray {
+    user = isHasFile ? properties.getProperty("bintray.user") : System.getenv("bintray_user")
+    key = isHasFile ? properties.getProperty("bintray.apikey") : System.getenv("bintray_apikey")
+
+    pkg {
+        repo = 'maven'
+        name = aarId
+        licenses = ["Apache-2.0"]
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        publish = true // 是否是公开项目。
+
+        version {
+            name = version
+            desc = '养殖SDK'
+            released = new Date()
+            vcsTag = 'v' + version
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+    }
+    configurations = ['archives']
+}
+
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                // Add your description here
+                name aarId
+                artifactId aarId
+                description '养殖SDK'
+                url siteUrl
+//                authentication(userName: "whosmyqueen", password: "zheng520")
+                // Set your license
+                licenses {
+                    license {
+                        name 'Apache-2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'whosmyqueen'        //填写bintray或者github的用户名
+                        name '郑志辉'         //姓名，可以是中文
+                        email '644049260@qq.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+javadoc {
+    options {
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
