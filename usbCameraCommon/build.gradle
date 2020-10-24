@@ -25,17 +25,21 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion versionCompiler
-   	buildToolsVersion versionBuildTool
+    buildToolsVersion versionBuildTool
 
-   	compileOptions {
-   		sourceCompatibility javaSourceCompatibility
-   		targetCompatibility javaTargetCompatibility
-   	}
+    compileOptions {
+        sourceCompatibility javaSourceCompatibility
+        targetCompatibility javaTargetCompatibility
+    }
 
     defaultConfig {
         minSdkVersion 18
         targetSdkVersion versionTarget
-
+        versionCode 1
+        versionName "1.0.5"
+        ndk {
+            abiFilters "armeabi-v7a"//, "armeabi", "x86", "mips"
+        }
     }
     buildTypes {
         release {
@@ -46,13 +50,22 @@ android {
 }
 
 dependencies {
-	api fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
-	implementation "com.android.support:support-v4:${supportLibVersion}"
-	implementation "com.android.support:support-annotations:${supportLibVersion}"
-
-	implementation("com.whosmyqueen.hardware:hardware-utils:${commonLibVersion}") {
-   		exclude module: 'support-v4'
-   	}
-	implementation project(':libuvccamera')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation("com.whosmyqueen.hardware:hardware-utils:${commonLibVersion}") {
+        exclude module: 'support-v4'
+    }
+//	api project(':libuvccamera')
+    implementation 'com.whosmyqueen.hardware:uvc-camera-sdk:1.0.5'
 }
+ext {
+    gitUrl = "https://github.com/whosmyqueen/uvc-camera.git"
+    siteUrl = "https://github.com/whosmyqueen/uvc-camera"
+    groupId = "com.whosmyqueen.hardware"
+    artifactId = "usb-uvc-camera-sdk"
+    version = android.defaultConfig.versionName
+}
+apply from: '../bintray.gradle'

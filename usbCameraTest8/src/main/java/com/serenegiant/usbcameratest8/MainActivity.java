@@ -43,9 +43,6 @@ import com.serenegiant.common.BaseActivity;
 
 import com.serenegiant.usb.CameraDialog;
 import com.serenegiant.usbcameracommon.UVCCameraHandler;
-import com.serenegiant.usb.USBMonitor;
-import com.serenegiant.usb.USBMonitor.OnDeviceConnectListener;
-import com.serenegiant.usb.USBMonitor.UsbControlBlock;
 import com.serenegiant.usb.UVCCamera;
 import com.serenegiant.utils.ViewAnimationHelper;
 import com.serenegiant.widget.CameraViewInterface;

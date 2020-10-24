@@ -9,12 +9,14 @@ if (file.exists()) {
     properties.load(file.newDataInputStream())
 }
 
-def gitUrl = 'https://github.com/whosmyqueen/uvc-camera.git'   // Git仓库的url
-def siteUrl = 'https://github.com/whosmyqueen/uvc-camera'   // 项目的主页
+def gitUrl = project.ext.gitUrl   // Git仓库的url
+def siteUrl = project.ext.siteUrl   // 项目的主页
 
-version = "1.0.1"
-group = "com.whosmyqueen.hardware"
-def aarId = "uvc-camera-sdk"
+version = project.ext.version
+group = project.ext.groupId
+def arrId = ext.artifactId
+println group
+println arrId
 
 
 bintray {
@@ -23,7 +25,7 @@ bintray {
 
     pkg {
         repo = 'maven'
-        name = aarId
+        name = arrId
         licenses = ["Apache-2.0"]
         websiteUrl = siteUrl
         vcsUrl = gitUrl
@@ -31,7 +33,7 @@ bintray {
 
         version {
             name = version
-            desc = 'uvc-camera-sdk'
+            desc = arrId
             released = new Date()
             vcsTag = 'v' + version
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
@@ -48,9 +50,9 @@ install {
             project {
                 packaging 'aar'
                 // Add your description here
-                name aarId
-                artifactId aarId
-                description 'uvc-camera-sdk'
+                name arrId
+                artifactId arrId
+                description arrId
                 url siteUrl
                 // Set your license
                 licenses {
