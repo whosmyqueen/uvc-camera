@@ -1,53 +1,53 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-		kotlin_version = '1.4.10'
-	}
-	repositories {
-		maven { url 'https://maven.aliyun.com/repository/public/' }
+        kotlin_version = '1.4.10'
+    }
+    repositories {
+        maven { url 'https://dl.bintray.com/whosmyqueen/maven/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
 
-		maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
 
-		maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
 
-		maven { url 'https://maven.aliyun.com/repository/central/' }
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/central/' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.2'
-		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-		//Gradle Android Maven plugin
-		classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-		//Gradle Bintray Plugin
-		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-	}
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        //Gradle Android Maven plugin
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        //Gradle Bintray Plugin
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+    }
 }
 
 allprojects {
     repositories {
-		maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://dl.bintray.com/whosmyqueen/maven/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
 
-		maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
 
-		maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
 
-		maven { url 'https://maven.aliyun.com/repository/central/' }
-		jcenter()
-		maven { url 'http://raw.github.com/saki4510t/libcommon/master/repository/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+
     }
 }
 
 task clean(type: Delete) {
-	delete rootProject.buildDir
+    delete rootProject.buildDir
 }
 
 ext {
-	supportLibVersion = '27.1.1'  // variable that can be referenced to keep support libs consistent
-	commonLibVersion= '2.12.4'
-	versionBuildTool = '27.0.3'
-	versionCompiler = 27
-	versionTarget = 27
-	versionNameString = '1.0.0'
-	javaSourceCompatibility = JavaVersion.VERSION_1_8
-	javaTargetCompatibility = JavaVersion.VERSION_1_8
+    supportLibVersion = '27.1.1'  // variable that can be referenced to keep support libs consistent
+    commonLibVersion = '1.0.0'
+    versionBuildTool = '27.0.3'
+    versionCompiler = 27
+    versionTarget = 27
+    versionNameString = '1.0.0'
+    javaSourceCompatibility = JavaVersion.VERSION_1_8
+    javaTargetCompatibility = JavaVersion.VERSION_1_8
 }

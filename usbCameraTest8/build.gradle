@@ -61,7 +61,7 @@ dependencies {
 	})
 	testImplementation 'junit:junit:4.12'
 
-	implementation("com.serenegiant:common:${commonLibVersion}") {
+	implementation("com.whosmyqueen.hardware:hardware-utils:${commonLibVersion}") {
 		exclude module: 'support-v4'
 	}
 	implementation project(':libuvccamera')
